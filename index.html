@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PortivaMedia | AI-Powered Digital Marketing</title>
+  <title>PortivaMedia | AI‑Powered Marketing</title>
+
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-  <!-- AOS -->
+
+  <!-- AOS Animate-On-Scroll -->
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>document.addEventListener('DOMContentLoaded',()=>AOS.init({duration:800,once:true}));</script>
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
   <style>
     .brand-yellow { background-color: #FBBF24; }
     #site-nav { background: transparent; transition: background 0.3s; }
@@ -17,10 +22,22 @@
     #site-nav.scrolled a { color: #333 !important; }
     #site-nav.scrolled a:hover { color: #FBBF24 !important; }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true });
+      feather.replace();
+      const nav = document.getElementById('site-nav');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      });
+    });
+  </script>
 </head>
 <body class="font-sans antialiased text-gray-900">
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav id="site-nav" class="fixed w-full z-50" data-aos="fade-down">
     <div class="container mx-auto flex items-center justify-between py-4 px-6">
       <a href="#" class="text-2xl font-bold text-white">PortivaMedia</a>
@@ -36,12 +53,16 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <header class="relative h-screen bg-black text-white pt-16 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('assets/hero.jpg');"></div>
+    <div class="absolute inset-0 bg-cover bg-center" 
+         style="background-image:url('https://source.unsplash.com/1600x900/?digital-marketing')">
+    </div>
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4" style="text-shadow:0 2px 8px rgba(0,0,0,0.6);" data-aos="fade-up" data-aos-delay="200">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4" 
+          style="text-shadow:0 2px 8px rgba(0,0,0,0.6)" 
+          data-aos="fade-up" data-aos-delay="200">
         AI‑Powered Marketing<br/>That Delivers Growth
       </h1>
       <p class="mb-6 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="400">
@@ -56,75 +77,79 @@
 
   <main class="mt-16">
 
-    <!-- Services Section -->
+    <!-- SERVICES -->
     <section id="services" class="py-20 container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Core Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/icons/seo.svg" alt="SEO & SEM" class="h-12 mx-auto mb-4"/>
+          <i data-feather="search" class="h-12 w-12 mx-auto mb-4"></i>
           <h3 class="text-xl font-semibold mb-2">SEO & SEM</h3>
-          <p>On-page optimization, local SEO, and targeted PPC campaigns.</p>
+          <p>On‑page optimization, local SEO, and targeted PPC campaigns.</p>
         </div>
         <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
-          <img src="assets/icons/content.svg" alt="Content & Social" class="h-12 mx-auto mb-4"/>
+          <i data-feather="edit" class="h-12 w-12 mx-auto mb-4"></i>
           <h3 class="text-xl font-semibold mb-2">Content & Social</h3>
           <p>Engaging social posts, influencer partnerships, and blog strategies.</p>
         </div>
         <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="500">
-          <img src="assets/icons/automation.svg" alt="Automation & Analytics" class="h-12 mx-auto mb-4"/>
+          <i data-feather="bar-chart-2" class="h-12 w-12 mx-auto mb-4"></i>
           <h3 class="text-xl font-semibold mb-2">Automation & Analytics</h3>
-          <p>Custom dashboards, conversion optimization, and machine-learning insights.</p>
+          <p>Custom dashboards, conversion optimization, and ML‑driven insights.</p>
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- PROCESS -->
     <section id="process" class="py-20 bg-gray-100">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our 4‑Phase Process</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div class="p-6 border rounded-lg" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="font-semibold text-xl mb-2">1. Strategy</h3>
+          <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
+            <i data-feather="layers" class="h-12 w-12 mx-auto mb-4"></i>
+            <h3 class="font-semibold text-xl mb-2">Strategy</h3>
             <p>Deep dive workshop to set goals & KPIs.</p>
           </div>
-          <div class="p-6 border rounded-lg" data-aos="fade-up" data-aos-delay="300">
-            <h3 class="font-semibold text-xl mb-2">2. Research</h3>
+          <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
+            <i data-feather="clipboard" class="h-12 w-12 mx-auto mb-4"></i>
+            <h3 class="font-semibold text-xl mb-2">Research</h3>
             <p>Market analysis & AI-driven content planning.</p>
           </div>
-          <div class="p-6 border rounded-lg" data-aos="fade-up" data-aos-delay="500">
-            <h3 class="font-semibold text-xl mb-2">3. Execution</h3>
+          <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="500">
+            <i data-feather="play-circle" class="h-12 w-12 mx-auto mb-4"></i>
+            <h3 class="font-semibold text-xl mb-2">Execution</h3>
             <p>Launch omnichannel campaigns with A/B testing.</p>
           </div>
-          <div class="p-6 border rounded-lg" data-aos="fade-up" data-aos-delay="700">
-            <h3 class="font-semibold text-xl mb-2">4. Optimize</h3>
-            <p>Continuous machine-learning optimization & scaling.</p>
+          <div class="p-6 border rounded-lg text-center" data-aos="fade-up" data-aos-delay="700">
+            <i data-feather="repeat" class="h-12 w-12 mx-auto mb-4"></i>
+            <h3 class="font-semibold text-xl mb-2">Optimize</h3>
+            <p>Continuous ML optimization & scaling.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Case Studies Section -->
+    <!-- CASE STUDIES -->
     <section id="cases" class="py-20 container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Success Stories</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/hero.jpg" alt="Dream Homes Realty" class="rounded-lg w-full md:w-1/2 mb-4 md:mb-0 md:mr-6"/>
+          <img src="https://source.unsplash.com/800x600/?real-estate" alt="Dream Homes" class="rounded-lg w-full md:w-1/2 mb-4 md:mb-0 md:mr-6">
           <div>
             <h3 class="font-semibold text-xl mb-2">Dream Homes Realty</h3>
             <p>150% more leads in 3 months with targeted ads & local SEO.</p>
           </div>
         </div>
         <div class="flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="400">
-          <img src="assets/case2.jpg" alt="Urban Investors Group" class="rounded-lg w-full md:w-1/2 mb-4 md:mb-0 md:mr-6"/>
+          <img src="https://source.unsplash.com/800x600/?law-firm" alt="LegalPros" class="rounded-lg w-full md:w-1/2 mb-4 md:mb-0 md:mr-6">
           <div>
-            <h3 class="font-semibold text-xl mb-2">Urban Investors Group</h3>
-            <p>200% traffic boost and 35% higher conversions with SEM & CRO.</p>
+            <h3 class="font-semibold text-xl mb-2">LegalPros Law Firm</h3>
+            <p>200% increase in consultation requests using local SEO.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- TESTIMONIALS -->
     <section id="testimonials" class="py-20 bg-gray-50">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What Clients Say</h2>
@@ -141,7 +166,7 @@
       </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- PRICING -->
     <section id="pricing" class="py-20 container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Pricing Plans</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -178,7 +203,7 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact" class="py-20 bg-black text-white text-center">
       <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Ready to Elevate Your Marketing?</h2>
       <p class="mb-6" data-aos="fade-up" data-aos-delay="200">Get a free strategy session and bespoke proposal.</p>
@@ -188,15 +213,5 @@
     </section>
 
   </main>
-
-  <!-- Scroll script -->
-  <script>
-    const nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    });
-  </script>
-
 </body>
 </html>
